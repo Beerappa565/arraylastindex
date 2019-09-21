@@ -1,0 +1,36 @@
+import java.io.*;
+
+class GFG {
+    public static int arrlastindex(int arr[],int i,int data)
+    {
+        int n=arr.length;
+        if(n==i)
+        {
+            return -1;
+        }
+      int index=arrlastindex(arr,i+1,data);
+       
+        if(index==-1)
+        {
+            if(arr[i]==data)
+            {
+              return i;  
+            }
+            else{
+            return index;
+            }
+        }
+        else
+        {
+            return index;
+        }
+                    
+        
+ }
+	public static void main (String[] args) {
+		int arr[]={1,6,7,4,5,3,7,8};
+	
+		int data=7;
+        System.out.println(arrlastindex(arr,0,data));
+	}
+}
